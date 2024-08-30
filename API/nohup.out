@@ -165,3 +165,16 @@ Port 5000 is in use by another program. Either identify and stop that program, o
 127.0.0.1 - - [30/Aug/2024 10:29:18] "OPTIONS /process_packet HTTP/1.1" 200 -
 127.0.0.1 - - [30/Aug/2024 10:29:18] "[35m[1mPOST /log HTTP/1.1[0m" 201 -
 127.0.0.1 - - [30/Aug/2024 10:29:18] "[35m[1mPOST /process_packet HTTP/1.1[0m" 500 -
+127.0.0.1 - - [30/Aug/2024 10:32:02] "[35m[1mPOST /log HTTP/1.1[0m" 201 -
+127.0.0.1 - - [30/Aug/2024 10:32:02] "[35m[1mPOST /log HTTP/1.1[0m" 201 -
+127.0.0.1 - - [30/Aug/2024 10:32:02] "[35m[1mPOST /log HTTP/1.1[0m" 201 -
+ * Detected change in '/home/hamda/Documents/5G_pdcp_protocol/API/index.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 145-450-767
+127.0.0.1 - - [30/Aug/2024 10:34:39] "[35m[1mPOST /log HTTP/1.1[0m" 201 -
+127.0.0.1 - - [30/Aug/2024 10:34:39] "[35m[1mPOST /log HTTP/1.1[0m" 201 -
+127.0.0.1 - - [30/Aug/2024 10:34:39] "[35m[1mPOST /log HTTP/1.1[0m" 201 -
+127.0.0.1 - - [30/Aug/2024 10:35:56] "[35m[1mPOST /log HTTP/1.1[0m" 201 -
+127.0.0.1 - - [30/Aug/2024 10:35:56] "[35m[1mPOST /log HTTP/1.1[0m" 201 -
+127.0.0.1 - - [30/Aug/2024 10:35:56] "[35m[1mPOST /log HTTP/1.1[0m" 201 -
