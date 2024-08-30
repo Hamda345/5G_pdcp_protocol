@@ -34,3 +34,20 @@ pre {
     word-wrap: break-word; /* Break words if necessary */
     margin: 0; /* Remove default margin */
 }
+
+nav {
+    background-color: #282c34;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+nav a {
+    color: white;
+    font-weight: bold;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}

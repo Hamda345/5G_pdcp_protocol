@@ -17,7 +17,6 @@ const PDCPLogList = () => {
                 setLoading(false);
             }
         };
-
         fetchLogs();
     }, []);
 
@@ -26,11 +25,13 @@ const PDCPLogList = () => {
 
     return (
         <div>
-            <h1>PDCP Logs</h1>
-            <ul>
+            <h1 style={{ fontSize: '24px', fontWeight: 'bold', marginBottom: '20px', textAlign: 'center' }}>PDCP Logs</h1>
+            <ul style={{ listStyle: 'none', padding: 0 }}>
                 {logs.map((log, index) => (
-                    <li key={index}>
-                        <pre>{JSON.stringify(log, null, 2)}</pre>
+                    <li key={index} style={{ marginBottom: '15px', backgroundColor: '#f5f5f5', padding: '10px', borderRadius: '4px' }}>
+                        <pre style={{ margin: 0, whiteSpace: 'pre-wrap', wordBreak: 'break-all' }}>
+                            {JSON.stringify(log, null, 2)}
+                        </pre>
                     </li>
                 ))}
             </ul>

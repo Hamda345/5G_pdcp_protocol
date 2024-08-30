@@ -30,3 +30,138 @@ Port 5000 is in use by another program. Either identify and stop that program, o
 127.0.0.1 - - [30/Aug/2024 03:42:06] "GET /log HTTP/1.1" 200 -
 127.0.0.1 - - [30/Aug/2024 03:42:22] "GET /log HTTP/1.1" 200 -
 127.0.0.1 - - [30/Aug/2024 03:42:22] "GET /log HTTP/1.1" 200 -
+ * Serving Flask app 'index'
+ * Debug mode: on
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+127.0.0.1 - - [30/Aug/2024 03:45:35] "[35m[1mPOST /log HTTP/1.1[0m" 201 -
+127.0.0.1 - - [30/Aug/2024 03:45:43] "GET /log HTTP/1.1" 200 -
+127.0.0.1 - - [30/Aug/2024 03:45:43] "GET /log HTTP/1.1" 200 -
+127.0.0.1 - - [30/Aug/2024 03:46:19] "[35m[1mPOST /log HTTP/1.1[0m" 201 -
+127.0.0.1 - - [30/Aug/2024 03:48:45] "[35m[1mPOST /log HTTP/1.1[0m" 201 -
+127.0.0.1 - - [30/Aug/2024 03:48:57] "[35m[1mPOST /log HTTP/1.1[0m" 201 -
+127.0.0.1 - - [30/Aug/2024 03:51:23] "[35m[1mPOST /log HTTP/1.1[0m" 201 -
+127.0.0.1 - - [30/Aug/2024 03:55:59] "[35m[1mPOST /log HTTP/1.1[0m" 201 -
+127.0.0.1 - - [30/Aug/2024 03:56:50] "[33mGET / HTTP/1.1[0m" 404 -
+127.0.0.1 - - [30/Aug/2024 03:56:50] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+127.0.0.1 - - [30/Aug/2024 03:56:55] "GET /log HTTP/1.1" 200 -
+127.0.0.1 - - [30/Aug/2024 03:56:55] "GET /log HTTP/1.1" 200 -
+127.0.0.1 - - [30/Aug/2024 04:55:33] "GET /log HTTP/1.1" 200 -
+127.0.0.1 - - [30/Aug/2024 04:55:33] "GET /log HTTP/1.1" 200 -
+127.0.0.1 - - [30/Aug/2024 05:18:20] "[35m[1mPOST /log HTTP/1.1[0m" 201 -
+ * Serving Flask app 'index'
+ * Debug mode: on
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+127.0.0.1 - - [30/Aug/2024 05:21:25] "[35m[1mPOST /log HTTP/1.1[0m" 201 -
+127.0.0.1 - - [30/Aug/2024 05:21:35] "GET /log HTTP/1.1" 200 -
+127.0.0.1 - - [30/Aug/2024 05:21:35] "GET /log HTTP/1.1" 200 -
+ * Detected change in '/home/hamda/Documents/5G_pdcp_protocol/API/index.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 652-336-798
+127.0.0.1 - - [30/Aug/2024 05:29:23] "GET /log HTTP/1.1" 200 -
+127.0.0.1 - - [30/Aug/2024 05:29:23] "GET /log HTTP/1.1" 200 -
+127.0.0.1 - - [30/Aug/2024 05:29:25] "[35m[1mPOST /log HTTP/1.1[0m" 201 -
+
+--- Processing IP Packet ---
+Processed PDCP PDU: bytearray(b'\x00\x00\x0c\xd5\xa9\xd0E\xa0\xe0\xae^^?\xed*\x9b{\xf0\x8cUt\xf2\xf7n#)\x83v\xe5\xe5\x11J\xe1\xafv\x96\xa4\xdd.\x98\x9a(\xde\xf4\xcfdla\xe7\x98e')
+Data logged successfully to MongoDB.
+
+--- Processing Received PDCP PDU ---
+Error processing received packet: Data must be padded to 16 byte boundary in CBC mode
+Traceback (most recent call last):
+  File "/home/hamda/Documents/5G_pdcp_protocol/API/../main.py", line 76, in <module>
+    main()
+  File "/home/hamda/Documents/5G_pdcp_protocol/API/../main.py", line 46, in main
+    original_ip_packet = pdcp.process_received_packet(pdcp_pdu, sn_length)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hamda/Documents/5G_pdcp_protocol/packet_process.py", line 45, in process_received_packet
+    unprotected_packet = self.security.unprotect(protected_packet)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hamda/Documents/5G_pdcp_protocol/security.py", line 29, in unprotect
+    decrypted_data = cipher.decrypt(encrypted_data[AES.block_size:])
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/site-packages/Crypto/Cipher/_mode_cbc.py", line 246, in decrypt
+    raise ValueError("Data must be padded to %d byte boundary in CBC mode" % self.block_size)
+ValueError: Data must be padded to 16 byte boundary in CBC mode
+127.0.0.1 - - [30/Aug/2024 05:29:25] "POST /execute_script HTTP/1.1" 200 -
+ * Detected change in '/home/hamda/Documents/5G_pdcp_protocol/API/index.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 652-336-798
+127.0.0.1 - - [30/Aug/2024 05:32:17] "GET /log HTTP/1.1" 200 -
+127.0.0.1 - - [30/Aug/2024 05:32:17] "GET /log HTTP/1.1" 200 -
+127.0.0.1 - - [30/Aug/2024 05:32:20] "[35m[1mPOST /log HTTP/1.1[0m" 201 -
+
+--- Processing IP Packet ---
+Processed PDCP PDU: bytearray(b"\x00\x00\x0c\xe0\x15E\xc8`\xc6\x16\x9e\xcc\xa2j}/ki0\xd2\x049\xc5\x02\x18w\xfb\xd4=\xb17\xc7\xf8\x1aI\x95\x81\xd8\x12\xcdD\xf0\'\xb7\x0b\xab\xf2dt\xda\xdf")
+Data logged successfully to MongoDB.
+
+--- Processing Received PDCP PDU ---
+Error processing received packet: Data must be padded to 16 byte boundary in CBC mode
+Traceback (most recent call last):
+  File "/home/hamda/Documents/5G_pdcp_protocol/API/../main.py", line 76, in <module>
+    main()
+  File "/home/hamda/Documents/5G_pdcp_protocol/API/../main.py", line 46, in main
+    original_ip_packet = pdcp.process_received_packet(pdcp_pdu, sn_length)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hamda/Documents/5G_pdcp_protocol/packet_process.py", line 45, in process_received_packet
+    unprotected_packet = self.security.unprotect(protected_packet)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hamda/Documents/5G_pdcp_protocol/security.py", line 29, in unprotect
+    decrypted_data = cipher.decrypt(encrypted_data[AES.block_size:])
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/site-packages/Crypto/Cipher/_mode_cbc.py", line 246, in decrypt
+    raise ValueError("Data must be padded to %d byte boundary in CBC mode" % self.block_size)
+ValueError: Data must be padded to 16 byte boundary in CBC mode
+127.0.0.1 - - [30/Aug/2024 05:32:20] "POST /process_packet HTTP/1.1" 200 -
+ * Detected change in '/home/hamda/Documents/5G_pdcp_protocol/API/index.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 652-336-798
+127.0.0.1 - - [30/Aug/2024 09:14:12] "OPTIONS /process_packet HTTP/1.1" 200 -
+127.0.0.1 - - [30/Aug/2024 09:14:12] "[35m[1mPOST /log HTTP/1.1[0m" 201 -
+127.0.0.1 - - [30/Aug/2024 09:14:12] "[35m[1mPOST /process_packet HTTP/1.1[0m" 500 -
+ * Serving Flask app 'index'
+ * Debug mode: on
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+127.0.0.1 - - [30/Aug/2024 09:15:07] "OPTIONS /process_packet HTTP/1.1" 200 -
+127.0.0.1 - - [30/Aug/2024 09:15:07] "[35m[1mPOST /log HTTP/1.1[0m" 201 -
+127.0.0.1 - - [30/Aug/2024 09:15:07] "[35m[1mPOST /process_packet HTTP/1.1[0m" 500 -
+127.0.0.1 - - [30/Aug/2024 09:16:51] "GET /log HTTP/1.1" 200 -
+127.0.0.1 - - [30/Aug/2024 09:16:51] "GET /log HTTP/1.1" 200 -
+127.0.0.1 - - [30/Aug/2024 09:24:34] "GET /log HTTP/1.1" 200 -
+127.0.0.1 - - [30/Aug/2024 09:24:37] "GET /log HTTP/1.1" 200 -
+127.0.0.1 - - [30/Aug/2024 09:24:37] "GET /log HTTP/1.1" 200 -
+127.0.0.1 - - [30/Aug/2024 09:25:16] "OPTIONS /process_packet HTTP/1.1" 200 -
+127.0.0.1 - - [30/Aug/2024 09:25:16] "[35m[1mPOST /log HTTP/1.1[0m" 201 -
+127.0.0.1 - - [30/Aug/2024 09:25:16] "[35m[1mPOST /process_packet HTTP/1.1[0m" 500 -
+127.0.0.1 - - [30/Aug/2024 09:28:09] "GET /log HTTP/1.1" 200 -
+127.0.0.1 - - [30/Aug/2024 09:28:09] "GET /log HTTP/1.1" 200 -
+127.0.0.1 - - [30/Aug/2024 09:29:54] "GET /log HTTP/1.1" 200 -
+127.0.0.1 - - [30/Aug/2024 09:29:54] "GET /log HTTP/1.1" 200 -
+127.0.0.1 - - [30/Aug/2024 09:37:52] "GET /log HTTP/1.1" 200 -
+127.0.0.1 - - [30/Aug/2024 09:37:52] "GET /log HTTP/1.1" 200 -
+127.0.0.1 - - [30/Aug/2024 09:39:25] "GET /log HTTP/1.1" 200 -
+127.0.0.1 - - [30/Aug/2024 09:39:25] "GET /log HTTP/1.1" 200 -
+127.0.0.1 - - [30/Aug/2024 09:39:31] "GET /log HTTP/1.1" 200 -
+127.0.0.1 - - [30/Aug/2024 09:39:31] "GET /log HTTP/1.1" 200 -
+127.0.0.1 - - [30/Aug/2024 09:39:37] "OPTIONS /process_packet HTTP/1.1" 200 -
+127.0.0.1 - - [30/Aug/2024 09:39:37] "[35m[1mPOST /log HTTP/1.1[0m" 201 -
+127.0.0.1 - - [30/Aug/2024 09:39:37] "[35m[1mPOST /process_packet HTTP/1.1[0m" 500 -
+127.0.0.1 - - [30/Aug/2024 09:53:39] "GET /log HTTP/1.1" 200 -
+127.0.0.1 - - [30/Aug/2024 09:53:39] "GET /log HTTP/1.1" 200 -
+127.0.0.1 - - [30/Aug/2024 09:53:45] "OPTIONS /process_packet HTTP/1.1" 200 -
+127.0.0.1 - - [30/Aug/2024 09:53:45] "[35m[1mPOST /log HTTP/1.1[0m" 201 -
+127.0.0.1 - - [30/Aug/2024 09:53:45] "[35m[1mPOST /process_packet HTTP/1.1[0m" 500 -
+127.0.0.1 - - [30/Aug/2024 10:25:21] "OPTIONS /process_packet HTTP/1.1" 200 -
+127.0.0.1 - - [30/Aug/2024 10:25:21] "[35m[1mPOST /log HTTP/1.1[0m" 201 -
+127.0.0.1 - - [30/Aug/2024 10:25:21] "[35m[1mPOST /process_packet HTTP/1.1[0m" 500 -
+127.0.0.1 - - [30/Aug/2024 10:27:41] "[35m[1mPOST /log HTTP/1.1[0m" 201 -
+127.0.0.1 - - [30/Aug/2024 10:27:42] "[35m[1mPOST /log HTTP/1.1[0m" 201 -
+127.0.0.1 - - [30/Aug/2024 10:27:42] "[35m[1mPOST /log HTTP/1.1[0m" 201 -
+127.0.0.1 - - [30/Aug/2024 10:29:18] "OPTIONS /process_packet HTTP/1.1" 200 -
+127.0.0.1 - - [30/Aug/2024 10:29:18] "[35m[1mPOST /log HTTP/1.1[0m" 201 -
+127.0.0.1 - - [30/Aug/2024 10:29:18] "[35m[1mPOST /process_packet HTTP/1.1[0m" 500 -

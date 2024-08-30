@@ -15,8 +15,8 @@ python main.py
 
 sleep 5
 
-#start UI
-echo "Starting UI ..."
-cd ./pdcp_logger/
-npm start &
+# #start UI
+# echo "Starting UI ..."
+# cd ./pdcp_logger/
+# npm start &
 

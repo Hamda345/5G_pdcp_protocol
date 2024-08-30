@@ -1,5 +1,6 @@
 import json
-import requests  # Import requests to send HTTP requests
+import requests
+import sys
 from packet_process import PDCP
 from compression import ROHCProfile, ROHCMode
 from state_management import PDCPState
@@ -9,7 +10,7 @@ from timers import PDCPTimers
 def log_data_to_api(data):
     """Log exchanged data to the MongoDB API."""
     try:
-        response = requests.post('http://localhost:5000/log', json=data)  # Send data to the API
+        response = requests.post('http://localhost:5000/log', json=data)
         if response.status_code == 201:
             print("Data logged successfully to MongoDB.")
         else:
@@ -17,7 +18,7 @@ def log_data_to_api(data):
     except Exception as e:
         print(f"Error logging data to API: {e}")
 
-def main():
+def main(ip_packet_hex, sn_length):
     # Initialize PDCP components
     pdcp = PDCP(profile=ROHCProfile.IP, mode=ROHCMode.UNIDIRECTIONAL)
     state_manager = PDCPState()
@@ -25,26 +26,25 @@ def main():
     timer_manager = PDCPTimers()
 
     # Set security parameters
-    pdcp.initialize_security(bearer=1, direction=0)  # Example parameters
+    pdcp.initialize_security(bearer=1, direction=0)
 
     # Start a timer for demonstration
-    timer_manager.start_timer('example_timer', 10)  # Start a 10-second timer
+    timer_manager.start_timer('example_timer', 10)
 
-    # Example IP packet (mock data)
-    ip_packet = b'\x45\x00\x00\x28\x00\x00\x40\x00\x40\x06\xb1\xe6\xc0\xa8\x00\x68\xc0\xa8\x00\x01'
-    sn_length = 12  # Example sequence number length
+    # Convert hex string to bytes
+    ip_packet = bytes.fromhex(ip_packet_hex)
 
     # Process the IP packet into a PDCP PDU
     print("\n--- Processing IP Packet ---")
-    pdcp_pdu = pdcp.process_packet(ip_packet, sn_length)
+    pdcp_pdu = pdcp.process_packet(ip_packet, int(sn_length))
 
     # Log the exchanged data
     log_data_to_api({'action': 'process_packet', 'ip_packet': ip_packet.hex(), 'pdcp_pdu': pdcp_pdu.hex()})
 
     # Simulate receiving the PDCP PDU
     print("\n--- Processing Received PDCP PDU ---")
-    original_ip_packet = pdcp.process_received_packet(pdcp_pdu, sn_length)
-    print("Original IP Packet:", original_ip_packet)
+    original_ip_packet = pdcp.process_received_packet(pdcp_pdu, int(sn_length))
+    print("Original IP Packet:", original_ip_packet.hex())
 
     # Log the received data
     log_data_to_api({'action': 'process_received_packet', 'pdcp_pdu': pdcp_pdu.hex(), 'original_ip_packet': original_ip_packet.hex()})
@@ -73,4 +73,8 @@ def main():
         print("\nTimer 'example_timer' is still active.")
 
 if __name__ == "__main__":
-    main()
+    if len(sys.argv) != 3:
+        print("Usage: python main.py <ip_packet_hex> <sn_length>")
+        sys.exit(1)
+    
+    main(sys.argv[1], sys.argv[2])
