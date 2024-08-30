@@ -1,0 +1,36 @@
+body {
+    background-color: #f4f4f4; /* Light background for contrast */
+    font-family: Arial, sans-serif; /* Clean font */
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center; /* Center the heading */
+    color: #333; /* Darker text color */
+}
+
+ul {
+    list-style-type: none; /* Remove default list styling */
+    padding: 0; /* Remove padding */
+}
+
+li {
+    background: #fff; /* White background for list items */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+    margin: 10px 0; /* Space between items */
+    padding: 15px; /* Padding inside items */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.2s; /* Smooth hover effect */
+}
+
+li:hover {
+    transform: scale(1.02); /* Slightly enlarge on hover */
+}
+
+pre {
+    white-space: pre-wrap; /* Wrap long lines */
+    word-wrap: break-word; /* Break words if necessary */
+    margin: 0; /* Remove default margin */
+}
